@@ -1,5 +1,5 @@
 {
-  "name": "text-to-speech",
+  "name": "shortcut-speech",
   "author": "hileix",
   "scripts": {
     "build": "node build.mjs",

@@ -8,10 +8,10 @@ function speakText(text: string) {
   // 创建一个SpeechSynthesisUtterance实例
   const utterance = new SpeechSynthesisUtterance(text)
   // 选择声音和语言等属性
-  // utterance.voice = speechSynthesis.getVoices().filter(function(voice) { return voice.name == 'Google UK English Male'; })[0];
-  // utterance.pitch = 1; // 设置音调
-  // utterance.rate = 1; // 设置语速
-  // utterance.volume = 1; // 设置音量
+  utterance.voice = speechSynthesis.getVoices().filter(function(voice) { return voice.name == 'Google UK English Male'; })[0];
+  utterance.pitch = 1; // 设置音调
+  utterance.rate = 1; // 设置语速
+  utterance.volume = 5; // 设置音量
 
   // 朗读文本
   window.speechSynthesis.speak(utterance)
@@ -45,7 +45,7 @@ export const Card = () => {
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'r') {
+      if (e.key === 't') {
         const selectedText = getSelectedText()
         if (selectedText.length) {
           speakText(selectedText)
